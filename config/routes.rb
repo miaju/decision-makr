@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'msg/show'
-  get 'home/show'
-  get 'admins/show'
-  get 'votes/show'
+  root to: 'home#show'
+
+  get '/admin/:id' => 'admins#show'
+  get '/vote/:id' => 'vote#show'
+  get '/new' => 'new#show'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
